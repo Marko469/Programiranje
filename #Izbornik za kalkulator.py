@@ -5,6 +5,8 @@ print("       ")
 print("1.izračunaj napon struje")
 print("2. Izračunaj otpor struje")
 print("3. Izračunaj jakosti struje")
+print("4. Zbroj serijskih otpora")
+print("5.zbroj paralelnih otpora")
 print("    ")
 opcija = int(input("Izaberite operaciju (1/2/3):"))
 #struktura grananja
@@ -26,5 +28,14 @@ elif opcija== 3:
     otpor = int(input("Upiši otpor:  "))
     jakost = napon/otpor
     print(f"Jakost struje je: {jakost} A")
+elif opcija == 4:
+    print("Izračun serijskog otpora")
+    otpor1 = int(input("Upiši otpor1:  "))
+    otpor2 = int(input("Upiši otpor2:  "))
+    otpor = otpor1+otpor2
+    print(f"otpor otpornika je: {otpor} ohm")
+elif opcija == 5:
+    
+
 else:
     print("Pogrešan unos")
