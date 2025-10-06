@@ -1,0 +1,35 @@
+#Izbornik za pretvrač mjernih jedinica
+while True:
+    print("  ")
+    print("Izbornik za pretvaranje mjernih jedinica")
+    print("  ")
+    print("1. Volti (V) u miliVolte (mV)")
+    print("     ")
+    print("2. amperi (A) u miliAmper (mA)")
+    print("     ")
+    print("3. ohmi (Ω) u kiloOhm (kΩ)")
+    print("     ")
+    print("0. Izlaz iz programa")
+    print("  ")
+#Strukturna građa programa
+
+    opcija = int(input("Unesite broj ispred željene opcije (1/2/3/0) "))
+    if opcija == 1:
+        volti = float(input("Unesite vrijednost u Voltima (V): "))
+        mV = volti * 1000
+        print(f"{volti} V je {mV} mV")
+    elif opcija == 2:
+        amperi = float(input("Unesite vrijednost u Amperima (A): "))
+        mA = amperi * 1000
+        print(f"{amperi} A je {mA} mA")
+    elif opcija == 3:
+        ohmi = float(input("Unesite vrijednost u Ohmima (Ω): "))
+        kOhm = ohmi / 1000
+        print(f"{ohmi} Ω je {kOhm} kΩ") 
+    elif opcija == 0:
+        print("Izlaz iz programa")
+        break
+
+    else:
+        print("Pogrešan unos, pokušajte ponovno")
+    
