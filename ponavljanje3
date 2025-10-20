@@ -1,0 +1,19 @@
+
+def kreiraj_pozdrav(ime):
+    """
+    Prima ime kao string i vraća formatiranu pozdravnu poruku.
+    """
+    pozdravna_poruka = f"Pozdrav, {ime}!"
+    return pozdravna_poruka
+
+
+pozdrav_za_anu = kreiraj_pozdrav("Ana")
+pozdrav_za_marka = kreiraj_pozdrav("Marko")
+
+pozdrav_direktno = kreiraj_pozdrav(input("Unesite ime za pozdrav: "))
+
+
+print("-" * 20)
+print(pozdrav_za_anu)
+print(pozdrav_za_marka)
+print(pozdrav_direktno)
