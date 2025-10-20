@@ -1,0 +1,8 @@
+godine_unos = input("Unesite svoje godine: ")
+godine = int(godine_unos)
+
+
+if godine >= 18:
+    print("Punoljetni ste.")
+else:
+    print("Maloljetni ste.")
