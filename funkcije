@@ -1,0 +1,97 @@
+def ispisi_izbornik():
+    print("----------------------")
+    print("Izbornik za kalkulator")
+    print("----------------------")
+    print("1. Izračun napona (U = I * R)")
+    print("2. Izračun otpora (R = U / I)")
+    print("3. Izračun jakosti struje (I = U / R)")
+    print("0. Izlaz iz programa")
+    print("----------------------")
+
+def izracunaj_napon(jakost, otpor):
+    return jakost * otpor
+
+def izracunaj_otpor(napon, jakost):
+    
+    return napon / jakost
+
+def izracunaj_jakost(napon, otpor):
+    return napon/otpor
+
+
+while True:
+    ispisi_izbornik()
+
+    opcija_str = input("Izaberite operaciju (0 / 1 / 2 / 3): ")
+
+    if opcija_str == '0':
+        print("Izlaz iz programa.")
+        break
+
+    try:
+        opcija = int(opcija_str)
+    except ValueError:
+        print("Pogrešan unos. Molimo unesite brojeve od 0 do 3.")
+        continue 
+
+
+    if opcija == 1:
+        print("Izračun napona struje (U)")
+        try:
+            jakost = float(input("Upiši jakost struje (I) u A: "))
+            otpor = float(input("Upiši otpor (R) u Ohm: "))
+
+            napon = izracunaj_napon(jakost, otpor)
+
+            print(f"Napon (U) je: {napon} V")
+        except ValueError:
+            
+            print("Pogrešan unos. Molimo unesite brojeve za jakost i otpor.")
+        except Exception as greska:
+             print(f"Dogodila se neočekivana greška: {greska}")
+
+    elif opcija == 2:
+    
+        print("Izračun otpora struje (R)")
+        try:
+            napon = float(input("Upiši napon (U) u V: "))
+            jakost = float(input("Upiši jakost struje (I) u A: "))
+
+            # Provjera dijeljenja s nulom
+            if jakost != 0:
+                otpor = izracunaj_otpor(napon, jakost)
+                print(f"Otpor (R) je: {otpor} Ohm")
+            else:
+                
+                print("Jakost struje (I) ne može biti nula za izračun otpora (dijeljenje s nulom).")
+
+        except ValueError:
+        
+            print("Pogrešan unos. Molimo unesite brojeve za napon i jakost.")
+        except Exception as greska:
+             print(f"Dogodila se neočekivana greška: {greska}")
+
+
+    elif opcija == 3:
+
+        print("Izračun jakosti struje (I)")
+        try:
+            napon = float(input("Upiši napon (U) u V: "))
+            otpor = float(input("Upiši otpor (R) u Ohm: "))
+            
+            
+            if otpor != 0:
+                jakost = izracunaj_jakost(napon, otpor) 
+                print(f"Jakost struje (I) je: {jakost} A")
+            else:
+            
+                print("Otpor (R) ne može biti nula za izračun jakosti (dijeljenje s nulom).")
+                
+        except ValueError:
+            
+            print("Pogrešan unos. Molimo unesite brojeve za napon i otpor.")
+        except Exception as greska:
+             print(f"Dogodila se neočekivana greška: {greska}")
+
+    else:
+        print("Pogrešan odabir. Molimo odaberite broj između 0 i 3.")
